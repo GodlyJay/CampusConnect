@@ -1,0 +1,394 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+@font-face {
+    font-family: 'Montserrat';
+    src: url(Campton Light DEMO 400.otf);
+}
+
+body {
+    line-height: 1.5;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat';
+    scroll-behavior: smooth;
+    color: rgb(43, 42, 42) !;
+}
+
+li,
+a,
+button {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 10%;
+    background-color: #065d94;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+}
+
+.logo {
+    cursor: pointer;
+    width: 120px;
+}
+
+.logo:hover {
+    /* background-color: rgb(118, 122, 122); */
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    border-color: #fff;
+    border-style: ridge;
+}
+
+.navlink,
+ul {
+    list-style: none;
+}
+
+.navlink li {
+    display: inline-block;
+    padding: 0px 50px;
+}
+
+.navlink li a {
+    transition: all 0.3s ease 0s;
+}
+
+.navlink li a:hover {
+    color: #0577be;
+}
+
+.contact {
+    color: #edf0f1;
+    padding: 9px 25px;
+    border-width: 2px;
+    border-style: ridge;
+    border-color: #edf0f1;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    background-color: #065d94;
+}
+
+.contact:hover {
+    background-color: #edf0f1;
+    color: #065d94;
+    border: none;
+}
+
+.welcome {
+    text-align: center;
+    font-family: 'Venose', sans-serif;
+    font-size: 50px;
+    color: #065d94;
+    font-style: inherit;
+    font: 400;
+    text-decoration: solid;
+    padding: 110px 0px 20px;
+    font-weight: bolder;
+}
+
+.intro {
+    padding: 0px;
+    align-items: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.booking {
+    padding: 9px 25px;
+    border-width: 2px;
+    border-style: ridge;
+    color: #065d94;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    border-color: #065d94;
+}
+
+.booking::after {
+    content: "Book Us";
+    transition: all 400ms;
+    top: 0;
+}
+
+.booking:hover::after {
+    content: "Book Us";
+    top: -36px;
+    background-color: #0577be;
+    color: #edf0f1;
+    padding: 9px 20px;
+    border-radius: 50px;
+}
+
+.imgs {
+    width: 410px;
+    padding: 0px;
+    position: absolute;
+    top: 0%;
+    right: 0%;
+}
+
+.frameSlide,
+.product {
+    position: relative;
+    align-items: center;
+    margin: 50px 310px;
+    background-color: #0577be;
+    padding: 0px;
+    height: 270px;
+    width: 1250px;
+    overflow: hidden;
+}
+
+.frame {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0%;
+    /* display: none; */
+    transition: 0.9s ease;
+    -webkit-transition: 0.9s ease;
+}
+
+.detail,
+.detail1 {
+    padding: 150px 160px 30px 100px;
+    margin: 0px;
+    font-size: 40px;
+    color: #ffffff !important;
+    font-family: 'Montserrat';
+    font-style: normal;
+    position: absolute;
+    background-color: rgb(110, 9, 177);
+}
+
+.detail1 {
+    padding: 150px 230px 30px 100px;
+    background-color: #064a77;
+}
+
+.service {
+    text-align: center;
+    font-family: 'Montserrat';
+    font-size: 40px;
+    color: #0577be;
+}
+
+
+/* Product Slider */
+
+.product {
+    height: 540px;
+    background-color: white;
+}
+
+.product-category {
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 40px;
+    text-transform: capitalize;
+    background-color: #fff;
+    font-family: 'Montserrat';
+}
+
+.product-container {
+    display: flex;
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+
+.product-container::-webkit-scrollbar {
+    height: 10px;
+    background-color: white;
+    border: 1px solid;
+    border-color: #064a77;
+    border-radius: 10px;
+}
+
+.product-container::-webkit-scrollbar-thumb {
+    background-color: #064a77;
+    border-radius: 10px;
+}
+
+.product-card {
+    flex: 0 0 auto;
+    width: 250px;
+    height: 450px;
+    margin-right: 40px;
+}
+
+.product-image {
+    position: relative;
+    width: 100%;
+    height: 350px;
+    opacity: 0.8;
+}
+
+.product-image:hover {
+    opacity: 1;
+}
+
+.product-thumb {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.discount-tag {
+    position: absolute;
+    background: #ffffff;
+    padding: 5px;
+    border-radius: 5px;
+    color: #065d94;
+    right: 10px;
+    top: 10px;
+    text-transform: capitalize;
+}
+
+.card-btn {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px;
+    width: 90%;
+    text-transform: capitalize;
+    border: none;
+    outline: none;
+    background: #fff;
+    border-radius: 5px;
+    transition: 0.5s;
+    cursor: pointer;
+    opacity: 0;
+    color: #065d94;
+}
+
+.product-card:hover .card-btn {
+    opacity: 1;
+}
+
+.card-btn:hover {
+    background: #065d94;
+    color: #ffffff;
+}
+
+.product-info {
+    width: 100%;
+    height: 100%;
+    padding-top: 10px;
+}
+
+.product-brand {
+    text-transform: uppercase;
+}
+
+.product-short-description {
+    width: 100%;
+    height: 20px;
+    line-height: 20px;
+    overflow: hidden;
+    opacity: 0.5;
+    text-transform: capitalize;
+    margin: 5px 0;
+}
+
+.price {
+    font-weight: 900;
+    font-size: 20px;
+}
+
+.actual-price {
+    margin-left: 20px;
+    opacity: 0.5;
+    text-decoration: line-through;
+}
+
+div ul li a {
+    color: black;
+}
+
+footer {
+    background-color: #0577be;
+    padding: 70px 0;
+}
+
+.foot-container {
+    max-width: 1170px;
+    margin: auto;
+}
+
+.rows {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.footer-col {
+    padding: 0 15px;
+    width: 25%;
+}
+
+.footer-col h4 {
+    font-size: 18px;
+    color: #fff;
+    text-transform: capitalize;
+    margin-bottom: 35px;
+    font-weight: 500;
+    position: relative;
+}
+
+.footer-col h4::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    background-color: #064a77;
+    height: 2px;
+    width: 50px;
+    box-sizing: border-box;
+}
+
+.footer-col ul li:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.footer-col ul li a,
+b {
+    font-size: 16px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 300;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+    color: #fff;
+    padding-left: 8px;
+}
+
+@media(max-width: 767px) {
+    .footer-col {
+        width: 50%;
+        margin-bottom: 30px;
+    }
+    .frameSlide,
+    .product {
+        width: 625px;
+        margin: 25px 159;
+    }
+}

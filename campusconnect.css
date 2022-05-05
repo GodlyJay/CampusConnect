@@ -351,6 +351,8 @@ video {
 footer {
     background-color: #0577be;
     padding: 40px 0;
+    margin-bottom: 0;
+    padding-bottom: 0;
     z-index: 100;
 }
 
@@ -427,4 +429,10 @@ b {
         width: 625px;
         margin: 25px 159;
     }
+}
+
+.copyright {
+    text-align: center;
+    color: #fff;
+    letter-spacing: 3px;
 }

@@ -103,8 +103,9 @@ span.price {
     padding: 110px 60px 20px;
     width: auto;
     margin: auto;
-    margin-left: 150px;
+    margin-left: 300px;
     align-items: center;
+    justify-content: center;
 }
 
 .payments {
@@ -122,4 +123,9 @@ span.price {
 
 .icon-container div input {
     align-items: center;
+}
+
+.copyright {
+    text-align: center;
+    color: #fff;
 }

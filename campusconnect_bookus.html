@@ -5,6 +5,7 @@
 </title>
 <link rel="stylesheet" href="campusconnect.css">
 <link rel="stylesheet" href="campusconnect_bookus.css">
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 
 
 <body>
@@ -28,13 +29,13 @@
         <div class="row">
             <div class="col-75">
                 <div class="container">
-                    <form>
+                    <div>
 
                         <div class="row">
                             <div class="col-50">
                                 <h3>Enter Your Details For Booking</h3>
                                 <label for="fname"><i class="fa fa-user"></i> Full Name</label>
-                                <input type="text" id="fname" name="firstname" placeholder="Ebo Dadzie">
+                                <input type="text" id="fname" name="firstname" placeholder="Emmanuel Ebo Dadzie">
                                 <label for="email"><i class="fa fa-envelope"></i> Email</label>
                                 <input type="text" id="email" name="email" placeholder="ebo@example.com">
                                 <label for="adr"><i class="fa fa-address-card-o"></i> GPS Address</label>
@@ -54,23 +55,29 @@
                                 </div>
                             </div>
 
+
+
                             <div class="col-50">
+                                <br>
+                                <h3>Service</h3>
+                                <label for="serve">Service Demand</label>
+                                <input type="text" id="serve" name="Serv" placeholder="Photo Shoot">
                                 <h3>Payment</h3>
-                                <label for="fname">Payment Method   </label>
+                                <label for="pay">Payment Method   </label>
                                 <div class="icon-container">
                                     <div class="payments">
                                         <div>
-                                            <input type="radio" name="payment-mth">
+                                            <input type="radio" name="payment-mth" value="MTN">
                                             <img src="mtn.jpg" alt="MTN">
 
                                         </div>
                                         <div>
-                                            <input type="radio" name="payment-mth">
+                                            <input type="radio" name="payment-mth" value="vodafone">
                                             <img src="voda.jpeg" alt="Vodafone">
                                         </div>
                                         <div>
-                                            <input type="radio" name="payment-mth">
-                                            <img src="at.png" alt="AirrtelTigo">
+                                            <input type="radio" name="payment-mth" value="AirtelTigo">
+                                            <img src="at.png" alt="AirtelTigo">
                                         </div>
                                     </div>
                                     <label for="cname">Registered Account Name</label>
@@ -82,9 +89,9 @@
 
                             </div>
 
-                            <input type="submit" value="Continue to Book" class="btn">
+                            <input id="subBtn" type="submit" onclick="submitData()" value="Continue to Book" class="btn">
                         </div>
-                    </form>
+                    </div>
                 </div>
             </div>
 
@@ -126,34 +133,77 @@
                         </li>
                     </ul>
                 </div>
+
                 <div class="footer-col" id="contact-us">
                     <h4>Contact Us</h4>
                     <ul>
                         <li>
-                            MBC Managed IT Services. 70 East Beaver Creek Rd. Unit 43 Richmond Hill, Ontario Canada, L4B 3B2 Phone: (905) 307-4357 Sales: solutions@mbccs.com Support: support@mbccs.com
+                            University of Cape Coast campusconnect@gmail.com +233 20 727 3122
                         </li>
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h4>Company</h4>
+                    <h4>Follow Us</h4>
                     <ul>
                         <li>
-                            <a href="#"> About Us</a>
+                            <a href="https://www.facebook.com"><i class="fab fa-facebook-f"></i> </a>
                         </li>
                         <li>
-                            <a href="#">About Us</a>
+                            <a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
                         </li>
                         <li>
-                            <a href="#">About Us</a>
+                            <a href="https://www.twitter.com"><i class="fab fa-twitter"></i></a>
                         </li>
                         <li>
-                            <a href="#">About Us</a>
+                            <a href="https://www.linkedin.com"><i class="fab fa-linkedin-in"></i></a>
                         </li>
                     </ul>
                 </div>
             </div>
         </div>
     </footer>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"></script>
+    <script>
+        const subBtn = document.getElementById('subBtn');
+
+        async function submitData() {
+            let name = document.getElementById('fname').value;
+            let email = document.getElementById('email').value;
+            let adr = document.getElementById('adr').value;
+            let city = document.getElementById('city').value;
+            let loc = document.getElementById('location').value;
+            let contact = document.getElementById('tel').value;
+
+            let service = document.getElementById('serve').value;
+            // const paymentMethod = document.getElementById('payment-mth').value;
+
+
+            const formData = {
+                name,
+                email,
+                adr,
+                city,
+                loc,
+                contact,
+                service,
+            };
+
+            subBtn.value = "Sending data ..."
+
+
+            const dbUrl = 'https://campus-connect-api.vercel.app/api/add/user';
+            await axios.post(dbUrl, formData)
+                .then(res => {
+                    alert(res.data.msg)
+                    subBtn.value = "Continue to Book"
+                });
+
+            return;
+        }
+    </script>
 
 </body>
 
